@@ -1,0 +1,22 @@
+{
+  "name": "ikea-financial-dashboard",
+  "version": "1.0.0",
+  "description": "Student project dashboard analyzing Inter IKEA Group operating income compression between FY25 and FY26 in EUR Billions.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static build complete. Ready for deployment.'"
+  },
+  "keywords": [
+    "ikea",
+    "financial-analysis",
+    "dashboard",
+    "operating-income",
+    "student-project"
+  ],
+  "author": "Student Analyst",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
