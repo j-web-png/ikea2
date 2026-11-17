@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inter IKEA Group FY25 vs FY26 Financial & Operating Income Dashboard</title>
+    <title>Inter IKEA Group FY25 vs FY26 Financial Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js CDN -->
@@ -15,17 +15,17 @@
         <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-start md:items-center">
             <div>
                 <h1 class="text-2xl md:text-3xl font-bold">Inter IKEA Group Financial Dashboard</h1>
-                <p class="text-blue-200 text-sm mt-1">Operating Income Compression Analysis: FY25 vs. FY26 (in EUR Billions)</p>
+                <p class="text-blue-200 text-sm mt-1">Operating Income & Cost Structure Analysis (EUR Billions)</p>
             </div>
             <div class="mt-4 md:mt-0 bg-blue-800 px-4 py-2 rounded-lg text-sm border border-blue-700">
-                <span class="font-semibold">Sample Size (N):</span> 2 Consolidated Fiscal Years | <span class="font-semibold">Source:</span> FY26 Annual Report
+                <span class="font-semibold">Sample Size (N):</span> 2 Years | <span class="font-semibold">Source:</span> FY26 Annual Report
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-6 py-8 space-y-8">
-        <!-- Key Metrics Cards (Updated to Billions) -->
+        <!-- Key Metrics Cards -->
         <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                 <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Total Revenue</p>
@@ -49,61 +49,56 @@
             </div>
         </section>
 
-        <!-- Charts Section -->
+        <!-- Charts Section (Split Visualizations) -->
         <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Chart 1: P&L Comparison -->
+            <!-- Chart 1: Revenue & Stacked Cost Structure (Alternative Option A) -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">P&L Component Comparison (FY25 vs. FY26)</h3>
-                <p class="text-sm text-slate-600 mb-4">Comparing top-line revenue, material costs, and operating profit in EUR Billions (€B).</p>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Revenue vs. Cost Structure (€B)</h3>
+                <p class="text-sm text-slate-600 mb-4">Stacked view of raw material costs and operating expenses relative to total revenue.</p>
                 <div class="relative h-80">
-                    <canvas id="plComparisonChart"></canvas>
+                    <canvas id="costStructureChart"></canvas>
                 </div>
             </div>
 
-            <!-- Chart 2: EBIT Waterfall / Variance Bridge -->
+            <!-- Chart 2: Dedicated Profitability Metrics (EBIT & Net Profit) -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 class="text-lg font-bold text-slate-900 mb-2">EBIT Bridge: FY25 to FY26 (€ Billions)</h3>
-                <p class="text-sm text-slate-600 mb-4">Decomposing the -€0.27B drop in operating profit into revenue, cost, and OpEx drivers.</p>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Profitability Focus: EBIT & Net Profit (€B)</h3>
+                <p class="text-sm text-slate-600 mb-4">Isolated view showing the sharp contraction in Operating Profit vs. cushioned Net Profit.</p>
                 <div class="relative h-80">
-                    <canvas id="ebitWaterfallChart"></canvas>
+                    <canvas id="profitabilityChart"></canvas>
                 </div>
             </div>
         </section>
 
         <!-- Analysis & Recommendations Grid -->
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Analysis -->
             <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 lg:col-span-2">
-                <h3 class="text-lg font-bold text-slate-900 mb-4">Analysis, Patterns & Limitations</h3>
+                <h3 class="text-lg font-bold text-slate-900 mb-4">Analysis & Split Graph Insights</h3>
                 <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
                     <p>
-                        <strong class="text-slate-900">Operating Leverage Squeeze:</strong> While top-line revenue contracted by only <strong>-1.68%</strong> (€0.44B), operating profit dropped by <strong>-15.42%</strong> (€0.27B). This amplified impact occurs because Inter IKEA held wholesale prices stable or reduced them to support consumer affordability, while structural operating expenses (wage inflation, energy, digital investments, and restructuring) expanded.
+                        <strong class="text-slate-900">Cost Structure Breakdown (Chart 1):</strong> By separating top-line revenue (€25.86B) from cost components, the stacked chart highlights how raw material costs decreased (€20.66B), while non-material operating expenses expanded (€3.75B) due to wage inflation and restructuring.
                     </p>
                     <p>
-                        <strong class="text-slate-900">Net Profit Cushioning:</strong> Net profit fell by only <strong>-6.48%</strong> (€1.40B vs. €1.50B) due to higher net financial income supported by currency derivative gains, cushioning the operating compression.
-                    </p>
-                    <p>
-                        <strong class="text-slate-900">Project Limitations:</strong> Restricted to $N=2$ complete annual reports, limiting visibility into intra-year seasonal volatility. Furthermore, Inter IKEA Group's wholesale figures are decoupled from Ingka Group's retail store margins.
+                        <strong class="text-slate-900">Profit Compression (Chart 2):</strong> Isolating Operating Profit (€1.46B) from Net Profit (€1.40B) clearly demonstrates the operating leverage squeeze (-15.42% EBIT drop) versus the financial buffer provided by currency derivative gains supporting net income.
                     </p>
                 </div>
             </div>
 
-            <!-- Recommendations -->
             <div class="bg-slate-900 text-white p-6 rounded-xl shadow-sm flex flex-col justify-between">
                 <div>
                     <h3 class="text-lg font-bold mb-4 text-blue-400">Strategic Recommendations</h3>
                     <ul class="space-y-3 text-sm text-slate-300">
                         <li class="flex items-start">
                             <span class="text-blue-400 font-bold mr-2">1.</span>
-                            <span><strong>Cap Non-Core OpEx:</strong> Set a strict OpEx ceiling tied to digital automation efficiencies post-restructuring.</span>
+                            <span><strong>Cap Non-Core OpEx:</strong> Set strict ceilings on operational expense growth.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-blue-400 font-bold mr-2">2.</span>
-                            <span><strong>Vertical Integration:</strong> Utilize recently acquired sustainable forestland in the Baltics to insulate timber sourcing costs.</span>
+                            <span><strong>Vertical Integration:</strong> Use Baltic forestland acquisitions to control input costs.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-blue-400 font-bold mr-2">3.</span>
-                            <span><strong>Digital & Franchise Growth:</strong> Accelerate urban plan-and-order points to lift franchise sales volume and zero-COGS fee revenue.</span>
+                            <span><strong>Franchise Expansion:</strong> Accelerate urban plan-and-order points to drive fee revenue.</span>
                         </li>
                     </ul>
                 </div>
@@ -117,29 +112,79 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-6 mt-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 text-center text-xs">
-            <p>Data Source: Inter IKEA Holding B.V. Annual Report FY26. Figures reported in EUR Billions (€B). Entity excludes Ingka Group retail operations.</p>
+            <p>Data Source: Inter IKEA Holding B.V. Annual Report FY26. Figures reported in EUR Billions (€B).</p>
         </div>
     </footer>
 
-    <!-- Load Dataset and Initialize Charts (Linked to Billions Data) -->
-    <script src="data.js"></script>
+    <!-- Chart Scripts -->
     <script>
-        // P&L Comparison Bar Chart in Billions (€B)
-        const ctxPL = document.getElementById('plComparisonChart').getContext('2d');
-        new Chart(ctxPL, {
+        // Chart 1: Revenue vs Stacked Cost Structure (Stacked Bar Chart)
+        const ctxCost = document.getElementById('costStructureChart').getContext('2d');
+        new Chart(ctxCost, {
             type: 'bar',
             data: {
-                labels: ['Total Revenue', 'Raw Material Costs', 'Other OpEx', 'Operating Profit (EBIT)', 'Net Profit'],
+                labels: ['FY25', 'FY26'],
+                datasets: [
+                    {
+                        label: 'Total Revenue',
+                        data: [26.30, 25.86],
+                        backgroundColor: '#1E3A8A',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Raw Material Costs',
+                        data: [21.33, 20.66],
+                        backgroundColor: '#94A3B8',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Other Operating Expenses (OpEx)',
+                        data: [3.25, 3.75],
+                        backgroundColor: '#EF4444',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': €' + context.raw.toFixed(2) + 'B';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        grid: { color: '#F1F5F9' },
+                        ticks: { callback: function(value) { return '€' + value + 'B'; } }
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Chart 2: Dedicated Profitability Focus (Operating Profit vs Net Profit)
+        const ctxProfit = document.getElementById('profitabilityChart').getContext('2d');
+        new Chart(ctxProfit, {
+            type: 'bar',
+            data: {
+                labels: ['Operating Profit (EBIT)', 'Net Profit'],
                 datasets: [
                     {
                         label: 'FY25 (€B)',
-                        data: [26.30, 21.33, 3.25, 1.73, 1.50],
+                        data: [1.73, 1.50],
                         backgroundColor: '#1E3A8A',
                         borderRadius: 4
                     },
                     {
                         label: 'FY26 (€B)',
-                        data: [25.86, 20.66, 3.75, 1.46, 1.40],
+                        data: [1.46, 1.40],
                         backgroundColor: '#0D9488',
                         borderRadius: 4
                     }
@@ -153,7 +198,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': €' + context.raw.toFixed(2) + ' Billion';
+                                return context.dataset.label + ': €' + context.raw.toFixed(2) + 'B';
                             }
                         }
                     }
@@ -162,59 +207,7 @@
                     y: { 
                         beginAtZero: true, 
                         grid: { color: '#F1F5F9' },
-                        ticks: {
-                            callback: function(value) {
-                                return '€' + value + 'B';
-                            }
-                        }
-                    },
-                    x: { grid: { display: false } }
-                }
-            }
-        });
-
-        // EBIT Bridge / Waterfall Chart in Billions (€B)
-        const ctxBridge = document.getElementById('ebitWaterfallChart').getContext('2d');
-        new Chart(ctxBridge, {
-            type: 'bar',
-            data: {
-                labels: ['FY25 EBIT', 'Revenue Impact', 'Material Savings', 'OpEx / Restructuring', 'FY26 EBIT'],
-                datasets: [{
-                    label: 'EUR Billions',
-                    data: [1.73, -0.44, 0.67, -0.50, 1.46],
-                    backgroundColor: [
-                        '#1E3A8A',
-                        '#EF4444',
-                        '#10B981',
-                        '#EF4444',
-                        '#1E3A8A'
-                    ],
-                    borderRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let val = context.raw;
-                                let sign = val > 0 ? '+' : '';
-                                return 'Impact: ' + sign + val.toFixed(2) + ' Billion';
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: { 
-                        grid: { color: '#F1F5F9' },
-                        ticks: {
-                            callback: function(value) {
-                                return '€' + value + 'B';
-                            }
-                        }
+                        ticks: { callback: function(value) { return '€' + value + 'B'; } }
                     },
                     x: { grid: { display: false } }
                 }
